@@ -160,6 +160,7 @@ And that's the waaaaay it goes
 
 ---
 Copyright © 2017 Mohammed Chamma
+
 MIT License
 
 
