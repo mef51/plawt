@@ -24,6 +24,7 @@ T = np.arange(3000, 12000, 1)
 # plt.savefig('excitation_logarithmic.png')
 # plt.close()
 
+# make sure lines are first, the number doesn't matter so long as its a number
 myplot = {
 	0: {
 		'x': T,
