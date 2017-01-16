@@ -151,6 +151,13 @@ plotDictionary = {
 }
 ```
 
+Installation
+============
+Umm.. For now just copy plawt.py to your directory and use with 
+
+`import plawt` 
+
+
 And that's the waaaaay it goes
 
 
