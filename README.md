@@ -5,8 +5,10 @@ I don't like context switching from physics to python, and hopefully this will l
 
 Example
 =======
-Here's some code that makes a plot that shows why the strength of Balmer lines varies in different colored stars:
+Here's a plot that shows why the strength of Balmer lines varies in different colored stars:
+![plot](excitation_logarithmic.png)
 
+Here's the code for that plot using `plawt`:
 ```python
 from __future__ import division
 from math import pi
@@ -57,9 +59,6 @@ plawt.plot(myplot)
 
 ```
 
-This generates the following plot:
-![plot](excitation_logarithmic.png)
-
 The plot is also saved. I prefer this because I can glance at what is completely
 just information about the physical problem I'm working on. What are my labels? What is my data? What are my limits? Is it a log scale? Plus a few extra aesthetic things like grid, line color, the name of the file it's being saved as, etc.
 
@@ -97,6 +96,7 @@ plt.savefig('yo.png')
 
 You specify your plot in `plotDictionary`.
 Each line (data series) in your plot should be indexed by an __integer__ key. The actual integer doesn't matter but I like to go 0, 1, 2, ...
+
 I define my data series before anything else.
 
 ```python
@@ -112,7 +112,9 @@ plotDictionary = {
 The value of the '0'th line is another dictionary. The only mandatory fields are 'x' and 'y'. The 'line' field is optional as well as 'label'.
 
 In fact every field except for a 'x' and 'y' is optional.
-__Note: Not every pyplot field is implemented!__  I add fields as I need them. Send me pull requests if you'd like something added.
+
+__Note: Not every pyplot field is implemented!__  
+I add fields as I need them. Send me pull requests if you'd like something added.
 
 I try to keep a one-to-one mapping between the fields in `plawt` and in `matplotlib`:
 
