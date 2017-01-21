@@ -3,6 +3,10 @@ plawt - JSON-like sugar for matplotlib
 Because sometimes you just want a good looking plot goddamnit.
 I don't like context switching from physics to python, and hopefully this will let me do less of it.
 
+Installation
+============
+`pip install plawt` and then `import plawt` in your python file
+
 Example
 =======
 Here's a plot that shows why the strength of Balmer lines varies in different colored stars:
@@ -150,11 +154,6 @@ plotDictionary = {
 	'set_yscale': 'log'
 }
 ```
-
-Installation
-============
-Well.. For now just copy plawt.py to your directory and use with `import plawt` 
-
 
 And that's the waaaaay it goes
 
