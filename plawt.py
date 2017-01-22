@@ -36,6 +36,7 @@ def plot(plotStruct):
 	if 'filename' in plotStruct:
 		plt.savefig(plotStruct['filename'])
 	if 'show' in plotStruct:
-		plt.show()
+		if plotStruct['show']:
+			plt.show()
 		plt.close()
 	return plt # in case people wanna do extra shit
