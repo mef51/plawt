@@ -90,15 +90,7 @@ There is only one exposed method:
 plawt.plot(plotDictionary)
 ```
 
-You can take the return value if you want to do more things to your plot that haven't been implemented yet:
-
-```python
-plt = plawt.plot(plotDictionary)
-plt.gca(). etc etc
-plt.savefig('yo.png')
-```
-
-You specify your plot in `plotDictionary`.
+You specify your plot in a python dictionary, here called `plotDictionary`.
 Each line (data series) in your plot should be indexed by an __integer__ key. The actual integer doesn't matter but I like to go 0, 1, 2, ...
 
 I define my data series before anything else.
@@ -117,7 +109,7 @@ The value of the '0'th line is another dictionary. The only mandatory fields are
 
 In fact every field except for a 'x' and 'y' is optional.
 
-__Note: Not every pyplot field is implemented!__  
+__Note: Not every pyplot field is implemented!__
 I add fields as I need them. Send me pull requests if you'd like something added.
 
 I try to keep a one-to-one mapping between the fields in `plawt` and in `matplotlib`:
@@ -153,6 +145,26 @@ plotDictionary = {
 	},
 	'set_yscale': 'log'
 }
+```
+
+By default `plawt` will close your plot automatically after showing it to you or saving it to a file. If you set `'keepOpen':True` you can take the return value and use it to do more things to your plot that haven't been implemented yet:
+
+```python
+plotDictionary = {
+	0: {
+		'x': [1, 2, 3, 4, 5, 6],
+		'y': [1, 2, 3, 4, 5, 6],
+	},
+	'keepOpen': True
+}
+
+plt = plawt.plot(plotDictionary)
+plt.gca(). etc etc
+plt.savefig('yo.png')
+plt.show
+
+## Or even just
+plawt.plot(plotDictionary).show()
 ```
 
 And that's the waaaaay it goes

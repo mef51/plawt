@@ -33,10 +33,12 @@ def plot(plotStruct):
 			if key == 'ylim':
 				plt.ylim(val)
 
+	# Storing and cleanup of plot
 	if 'filename' in plotStruct:
 		plt.savefig(plotStruct['filename'])
-	if 'show' in plotStruct:
-		if plotStruct['show']:
-			plt.show()
+	if 'show' in plotStruct and plotStruct['show']:
+		plt.show()
+	if 'keepOpen' not in plotStruct or not plotStruct['keepOpen']:
 		plt.close()
+
 	return plt # in case people wanna do extra shit
