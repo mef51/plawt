@@ -9,10 +9,13 @@ def plot(plotStruct):
 		val = plotStruct[key]
 		if type(key) == int: # its a line
 			x = val['x']
-			y = val['y']
+			y = val['y'] if 'y' in val else None
 			line = val['line'] if 'line' in val else ''
 			label = val['label'] if 'label' in val else ''
-			plt.plot(x, y, line, label=label)
+			if y is None:
+				plt.plot(x, line, label=label)
+			else:
+				plt.plot(x, y, line, label=label)
 		elif type(key) == str: # its a property
 			if key == 'xlabel':
 				plt.xlabel(val)
