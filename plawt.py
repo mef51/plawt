@@ -5,6 +5,11 @@ import matplotlib.pyplot as plt
 
 def plot(plotStruct):
 	lines = []
+
+	# setup
+	if 'figsize' in plotStruct:
+		plt.figure(figsize=plotStruct['figsize'])
+
 	for key in plotStruct:
 		val = plotStruct[key]
 		if type(key) == int: # its a line

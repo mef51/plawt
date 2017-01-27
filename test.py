@@ -46,7 +46,8 @@ myplot = {
 	'legend': {'loc':4},
 	'ylim': (10e-18, 10e2),
 	'xlim': (2000,13e3),
-	'filename': 'excitation_logarithmic.png',
+	'filename': 'test.png',
+	'figsize': (10,5),
 	'show': True
 }
 
