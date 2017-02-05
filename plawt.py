@@ -17,10 +17,15 @@ def plot(plotStruct):
 			y = val['y'] if 'y' in val else None
 			line = val['line'] if 'line' in val else ''
 			label = val['label'] if 'label' in val else ''
+			markersize = val['markersize'] if 'markersize' in val else 6.0
+			markersize = val['ms'] if 'ms' in val else markersize
+			linewidth = val['linewidth'] if 'linewidth' in val else 1.0
+			linewidth = val['lw'] if 'lw' in val else linewidth
+
 			if y is None:
-				plt.plot(x, line, label=label)
+				plt.plot(x, line, label=label, ms=markersize, lw=linewidth)
 			else:
-				plt.plot(x, y, line, label=label)
+				plt.plot(x, y, line, label=label, ms=markersize, lw=linewidth)
 		elif type(key) == str: # its a property
 			if key == 'xlabel':
 				plt.xlabel(val)

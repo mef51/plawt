@@ -35,7 +35,8 @@ myplot = {
 	1:{
 		'x': T,
 		'y': excitationEq(2, T),
-		'line': 'k--',
+		'line': 'k:',
+		'lw': 2.0,
 		'label': 'Balmer Series $\log{N_2 / N}$'
 	},
 	'xlabel': 'Temperature (K)',
@@ -48,7 +49,7 @@ myplot = {
 	'xlim': (2000,13e3),
 	'filename': 'test.png',
 	'figsize': (10,5),
-	'show': True
+	'show': False
 }
 
 plawt.plot(myplot)
