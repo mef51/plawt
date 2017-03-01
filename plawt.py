@@ -27,6 +27,10 @@ def plot(plotStruct):
 				plt.plot(x, line, label=label, ms=markersize, lw=linewidth, alpha=alpha)
 			else:
 				plt.plot(x, y, line, label=label, ms=markersize, lw=linewidth, alpha=alpha)
+
+			if 'markerfacecolor' in val:
+				plt.gca().get_lines()[0].set_markerfacecolor(val['markerfacecolor'])
+
 		elif type(key) == str: # its a property
 			if key == 'xlabel':
 				plt.xlabel(val)
