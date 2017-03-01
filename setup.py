@@ -1,7 +1,7 @@
 from setuptools import setup
 setup(
 	name = 'plawt',
-	version = '1.0.5',
+	version = '1.0.6',
 	description = 'JSON-like sugar for plotting with matplotlib',
 	long_description = 'JSON-like sugar for plotting with matplotlib',
 	author = 'Mohammed Chamma',
@@ -10,5 +10,5 @@ setup(
 	license='MIT',
 	url = 'https://github.com/mef51/plawt',
 	keywords = 'plotting matplotlib science sugar wrapper',
-	classifiers = [],
+	classifiers = [ "Programming Language :: Python :: 2", "Programming Language :: Python :: 3"]
 )

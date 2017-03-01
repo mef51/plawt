@@ -21,11 +21,12 @@ def plot(plotStruct):
 			markersize = val['ms'] if 'ms' in val else markersize
 			linewidth = val['linewidth'] if 'linewidth' in val else 1.0
 			linewidth = val['lw'] if 'lw' in val else linewidth
+			alpha = val['alpha'] if 'alpha' in val else 1.0
 
 			if y is None:
-				plt.plot(x, line, label=label, ms=markersize, lw=linewidth)
+				plt.plot(x, line, label=label, ms=markersize, lw=linewidth, alpha=alpha)
 			else:
-				plt.plot(x, y, line, label=label, ms=markersize, lw=linewidth)
+				plt.plot(x, y, line, label=label, ms=markersize, lw=linewidth, alpha=alpha)
 		elif type(key) == str: # its a property
 			if key == 'xlabel':
 				plt.xlabel(val)
