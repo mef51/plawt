@@ -43,6 +43,7 @@ myplot = {
 	'ylabel': 'Relative Population $N_n / N$',
 	'title': 'log of Relative Populations of Hydrogen atoms in $n=1$ and $n=2$',
 	'set_yscale': 'log',
+	'set_xscale': 'log',
 	'grid': True,
 	'legend': {'loc':4},
 	'ylim': (10e-18, 10e2),

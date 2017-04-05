@@ -42,6 +42,8 @@ def plot(plotStruct):
 				plt.title(val)
 			if key == 'set_yscale':
 				plt.gca().set_yscale(val)
+			if key == 'set_xscale':
+				plt.gca().set_xscale(val)
 			if key == 'grid':
 				plt.grid()
 			if key == 'legend':
