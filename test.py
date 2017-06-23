@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 from __future__ import division
 from math import pi
 from numpy import exp, sqrt, log10, e
@@ -35,22 +35,24 @@ myplot = {
 	1:{
 		'x': T,
 		'y': excitationEq(2, T),
-		'line': 'k:',
-		'lw': 2.0,
-		'label': 'Balmer Series $\log{N_2 / N}$'
+		'line': 'go-',
+		'lw': 1,
+		'label': 'Balmer Series $\log{N_2 / N}$',
+		'ms': 1,
+		'mfc': 'k'
 	},
 	'xlabel': 'Temperature (K)',
 	'ylabel': 'Relative Population $N_n / N$',
 	'title': 'log of Relative Populations of Hydrogen atoms in $n=1$ and $n=2$',
 	'set_yscale': 'log',
-	'set_xscale': 'log',
+	# 'set_xscale': 'log',
 	'grid': True,
 	'legend': {'loc':4},
 	'ylim': (10e-18, 10e2),
 	'xlim': (2000,13e3),
 	'filename': 'test.png',
-	'figsize': (10,5),
-	'show': False
+	# 'figsize': (10,5),
+	'show': True
 }
 
 plawt.plot(myplot)
