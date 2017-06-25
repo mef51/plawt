@@ -35,6 +35,7 @@ plawt.plot({
 	'xlabel': 'Velocity', 'ylabel': 'Amplitude',
 	'sharex': True, 'sharey': True,
 	'hspace': 0,
+	# 'aspect': 16/9,
 	'filename': 'subplotcompare.png'
 }, {
 	0: {'x': x, 'y': y, 'line': 'bo'}

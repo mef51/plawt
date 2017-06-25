@@ -68,6 +68,7 @@ def plot(*plotStructs):
 				ax.grid()          if key == 'grid' and val else None
 				ax.set_xlim(val)   if key == 'xlim' else None
 				ax.set_ylim(val)   if key == 'ylim' else None
+				ax.set_aspect(val) if key == 'aspect' else None
 
 				if key == 'legend':
 					legend = val

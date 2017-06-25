@@ -35,7 +35,7 @@ myplot = {
 	1:{
 		'x': T,
 		'y': excitationEq(2, T),
-		'line': 'go-',
+		'line': 'bo-',
 		'lw': 1,
 		'label': 'Balmer Series $\log{N_2 / N}$',
 		'ms': 1,
