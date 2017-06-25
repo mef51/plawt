@@ -52,7 +52,7 @@ myplot = {
 	'xlim': (2000,13e3),
 	'filename': 'test.png',
 	# 'figsize': (10,5),
-	'show': True
+	'show': False
 }
 
 plawt.plot(myplot)
