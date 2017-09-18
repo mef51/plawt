@@ -5,7 +5,9 @@ I don't like context switching from physics to python, and hopefully this will l
 
 Installation
 ============
-`pip install plawt` and then `import plawt` in your python file
+`pip install plawt` and then `import plawt` in your python file.    
+Current version is [here](https://pypi.python.org/pypi/plawt/).
+See examples folder for how to use `plawt` to make subplots and step plots.
 
 Example
 =======
