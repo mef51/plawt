@@ -43,6 +43,7 @@ def plot(*plotStructs):
 				x          = val['x']
 				y          = val['y']          if 'y' in val else None
 				linestyle  = val['line']       if 'line' in val else ''
+				drawstyle  = val['draw']       if 'draw' in val else ''
 				label      = val['label']      if 'label' in val else ''
 				markersize = val['markersize'] if 'markersize' in val else 6.0
 				markersize = val['ms']         if 'ms' in val else markersize
@@ -50,7 +51,11 @@ def plot(*plotStructs):
 				linewidth  = val['lw']         if 'lw' in val else linewidth
 				alpha      = val['alpha']      if 'alpha' in val else 1.0
 
-				line, = ax.plot(x, y, linestyle) if y is not None else ax.plot(y, linestyle)
+
+				if y is not None:
+					line, = ax.plot(x, y, linestyle, drawstyle=drawstyle)
+				else:
+					line, = ax.plot(y, linestyle, drawstyle=drawstyle)
 				mfc = val['markerfacecolor'] if 'markerfacecolor' in val else line.get_markerfacecolor()
 				mfc = val['mfc'] if 'mfc' in val else line.get_markerfacecolor()
 
