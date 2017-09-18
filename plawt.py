@@ -43,7 +43,7 @@ def plot(*plotStructs):
 				x          = val['x']
 				y          = val['y']          if 'y' in val else None
 				linestyle  = val['line']       if 'line' in val else ''
-				drawstyle  = val['draw']       if 'draw' in val else ''
+				drawstyle  = val['draw']       if 'draw' in val else 'default'
 				label      = val['label']      if 'label' in val else ''
 				markersize = val['markersize'] if 'markersize' in val else 6.0
 				markersize = val['ms']         if 'ms' in val else markersize

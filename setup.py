@@ -1,7 +1,7 @@
 from setuptools import setup
 setup(
 	name = 'plawt',
-	version = '1.1.2',
+	version = '1.1.3',
 	description = 'JSON-like sugar for plotting with matplotlib',
 	long_description = 'JSON-like sugar for plotting with matplotlib',
 	author = 'Mohammed Chamma',
