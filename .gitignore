@@ -2,6 +2,4 @@
 dist/
 *.egg-info
 test.png
-subplottest.png
-subplotcompare.png
 __pycache__
