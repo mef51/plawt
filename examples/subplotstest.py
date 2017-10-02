@@ -8,6 +8,8 @@ import matplotlib as mpl
 x = np.linspace(0, 2 * np.pi, 400)
 y = np.sin(x ** 2)
 
+##### Vanilla Matplotlib #####
+
 # Three subplots sharing both x/y axes
 # f, (ax1, ax2, ax3) = plt.subplots(3, sharex=True, sharey=True)
 f, (ax1, ax2, ax3) = plt.subplots(3, sharex=True, sharey=True)
@@ -32,6 +34,8 @@ ax3.set_title('panel c', fontsize=12)
 f.subplots_adjust(hspace=0.3, wspace=0)
 plt.savefig('subplotcompare.png')
 plt.close()
+
+##### Same plot but with plawt #####
 
 plawt.plot({
 	0: {'x': x, 'y': y},
