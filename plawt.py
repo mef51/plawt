@@ -1,3 +1,4 @@
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 from numpy import ndarray
 
@@ -51,14 +52,14 @@ def plot(*plotStructs):
 				linewidth  = val['lw']         if 'lw' in val else linewidth
 				alpha      = val['alpha']      if 'alpha' in val else 1.0
 
-
 				if y is not None:
-					line, = ax.plot(x, y, linestyle, drawstyle=drawstyle)
+					line, = ax.plot(x, y, linestyle)
 				else:
-					line, = ax.plot(y, linestyle, drawstyle=drawstyle)
+					line, = ax.plot(y, linestyle)
 				mfc = val['markerfacecolor'] if 'markerfacecolor' in val else line.get_markerfacecolor()
 				mfc = val['mfc'] if 'mfc' in val else line.get_markerfacecolor()
 
+				line.set_drawstyle(drawstyle)
 				line.set_label(label)
 				line.set_markersize(markersize)
 				line.set_linewidth(linewidth)
@@ -75,6 +76,9 @@ def plot(*plotStructs):
 				ax.set_ylim(val)   if key == 'ylim' else None
 				ax.set_aspect(val) if key == 'aspect' else None
 
+				if key == 'subtitle':
+					fontsize = plotStruct['fontsize'] if 'fontsize' in plotStruct else mpl.rcParams['axes.titlesize']
+					ax.set_title(val, fontsize=fontsize)
 				if key == 'legend':
 					legend = val
 					loc = legend['loc'] if 'loc' in legend else '1'
