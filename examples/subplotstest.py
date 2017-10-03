@@ -56,10 +56,11 @@ plawt.plot({
 	'fontsize': 12,
 	'subloc': 'left'
 }, {
-	0: {'x': x, 'y': 2*y**2-1, 'line': 'ro'},
+	0: {'x': x, 'y': 2*y**2-1, 'line': 'ro', 'label': 'panel c'},
 	'subtitle': 'panel c',
 	'subtitledict': {'verticalalignment': 'center'},
 	'fontsize': 12,
-	'subloc': 'left'
+	'subloc': 'left',
+	'legend': {'loc': 2, 'fontsize': 10},
 })
 

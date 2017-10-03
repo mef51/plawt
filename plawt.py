@@ -75,16 +75,13 @@ def plot(*plotStructs):
 				ax.set_xlim(val)   if key == 'xlim' else None
 				ax.set_ylim(val)   if key == 'ylim' else None
 				ax.set_aspect(val) if key == 'aspect' else None
+				ax.legend(**val)   if key == 'legend' else None
 
 				if key == 'subtitle':
 					fontsize = plotStruct['fontsize'] if 'fontsize' in plotStruct else mpl.rcParams['axes.titlesize']
 					loc      = plotStruct['subloc'] if 'subloc' in plotStruct else 'center'
 					fontdict = plotStruct['subtitledict'] if 'subtitledict' in plotStruct else None
 					ax.set_title(val, fontdict=fontdict, fontsize=fontsize, loc=loc)
-				if key == 'legend':
-					legend = val
-					loc = legend['loc'] if 'loc' in legend else '1'
-					ax.legend(loc=loc)
 
 	# Storing and cleanup of plot
 	fig.savefig(globalParams['filename']) if 'filename' in globalParams else None
