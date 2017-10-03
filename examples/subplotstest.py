@@ -36,11 +36,14 @@ plt.savefig('subplotcompare.png')
 plt.close()
 
 ##### Same plot but with plawt #####
-
+subtitledict = {'verticalalignment': 'center'}
 plawt.plot({
 	0: {'x': x, 'y': y},
 	'title': 'Sharing both axes',
 	'subtitle': 'panel a',
+	'subtitledict': {'verticalalignment': 'center'},
+	'fontsize': 12,
+	'subloc': 'left',
 	'xlabel': 'Velocity', 'ylabel': 'Amplitude',
 	'sharex': True, 'sharey': True,
 	'hspace': 0.3,
@@ -48,9 +51,15 @@ plawt.plot({
 	'filename': 'subplottest.png'
 }, {
 	0: {'x': x, 'y': y, 'line': 'bo'},
-	'subtitle': 'panel b'
+	'subtitle': 'panel b',
+	'subtitledict': {'verticalalignment': 'center'},
+	'fontsize': 12,
+	'subloc': 'left'
 }, {
 	0: {'x': x, 'y': 2*y**2-1, 'line': 'ro'},
-	'subtitle': 'panel c'
+	'subtitle': 'panel c',
+	'subtitledict': {'verticalalignment': 'center'},
+	'fontsize': 12,
+	'subloc': 'left'
 })
 
