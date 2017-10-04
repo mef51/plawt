@@ -76,6 +76,7 @@ def plot(*plotStructs):
 				ax.set_ylim(val)   if key == 'ylim' else None
 				ax.set_aspect(val) if key == 'aspect' else None
 				ax.legend(**val)   if key == 'legend' else None
+				ax.minorticks_on() if key == 'minorticks' and val else None
 
 				if key == 'subtitle':
 					fontsize = plotStruct['fontsize'] if 'fontsize' in plotStruct else mpl.rcParams['axes.titlesize']

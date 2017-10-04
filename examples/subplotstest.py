@@ -29,6 +29,8 @@ ax3.scatter(x, 2 * y ** 2 - 1, color='r')
 ax1.set_title('panel a', fontsize=12)
 ax2.set_title('panel b', fontsize=12)
 ax3.set_title('panel c', fontsize=12)
+ax1.minorticks_on()
+
 # Fine-tune figure; make subplots close to each other and hide x ticks for
 # all but bottom plot.
 f.subplots_adjust(hspace=0.3, wspace=0)
@@ -44,6 +46,7 @@ plawt.plot({
 	'subtitledict': {'verticalalignment': 'center'},
 	'fontsize': 12,
 	'subloc': 'left',
+	'minorticks': True,
 	'xlabel': 'Velocity', 'ylabel': 'Amplitude',
 	'sharex': True, 'sharey': True,
 	'hspace': 0.3,
@@ -54,7 +57,7 @@ plawt.plot({
 	'subtitle': 'panel b',
 	'subtitledict': {'verticalalignment': 'center'},
 	'fontsize': 12,
-	'subloc': 'left'
+	'subloc': 'left',
 }, {
 	0: {'x': x, 'y': 2*y**2-1, 'line': 'ro', 'label': 'panel c'},
 	'subtitle': 'panel c',
