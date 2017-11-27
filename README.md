@@ -13,14 +13,15 @@ Features
 See  the examples folder for how to use `plawt` to make subplots, step plots, and other less common uses.
 
 In addition to any usual single panel plot `plawt` also wraps these matplotlib features:
-	* Arbitrary subplot grids, spacing between subplots
-	* Step Plots
-	* Log plots
-	* legends, legend locations, legend labels
-	* labelling, subplot titles (with location), super titles, font-size tweaking
-	* x limits, y limits,
-	* marker and linestyle, alpha, drawstyle
-	* saving figures, showing figures to screen
+
+* Arbitrary subplot grids, spacing between subplots
+* Step Plots
+* Log plots
+* legends, legend locations, legend labels
+* labelling, subplot titles (with location), super titles, font-size tweaking
+* x limits, y limits,
+* marker and linestyle, alpha, drawstyle
+* saving figures, showing figures to screen
 
 Example
 =======
