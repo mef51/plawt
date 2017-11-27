@@ -11,6 +11,7 @@ def plot(*plotStructs):
 	# setup subplots
 	sharex = globalParams['sharex'] if 'sharex' in globalParams else False
 	sharey = globalParams['sharey'] if 'sharey' in globalParams else False
+	gridspec_kw = globalParams['gridspec_kw'] if 'gridspec_kw' in globalParams else None
 
 	# setup figure and adjustments
 	# https://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.subplots_adjust
@@ -18,7 +19,14 @@ def plot(*plotStructs):
 	wspace = globalParams['wspace'] if 'wspace' in globalParams else 0.2
 	title  = globalParams['title']  if 'title'  in globalParams else ''
 
-	fig, axes = plt.subplots(len(plotStructs), sharex=sharex, sharey=sharey)
+	nrows = globalParams['nrows'] if 'nrows' in globalParams else 1
+	ncols = globalParams['ncols'] if 'ncols' in globalParams else 1
+	isGridSpecified = 'nrows' in globalParams or 'ncols' in globalParams
+	if len(plotStructs) != 1 and not isGridSpecified:
+		nrows = len(plotStructs)
+
+	fig, axesarray = plt.subplots(nrows=nrows, ncols=ncols, sharex=sharex, sharey=sharey, gridspec_kw=gridspec_kw)
+	axes = axesarray.flatten()
 	fig.set_size_inches(globalParams['figsize']) if 'figsize' in globalParams else None
 	fig.subplots_adjust(hspace=hspace, wspace=wspace)
 	fig.suptitle(title)
@@ -37,7 +45,11 @@ def plot(*plotStructs):
 		axes = (axes,) # this makes axes iterable even if there's just one axes
 
 	for i, ax in enumerate(axes):
-		plotStruct = plotStructs[i]
+		try: # show blank axis if user mispecifies nrows or ncols, like matplotlib
+			plotStruct = plotStructs[i]
+		except IndexError:
+			plotStruct = {}
+
 		for key in plotStruct:
 			val = plotStruct[key]
 			if type(key) == int: # its a line

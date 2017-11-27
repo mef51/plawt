@@ -5,13 +5,26 @@ I don't like context switching from physics to python, and hopefully this will l
 
 Installation
 ============
-`pip install plawt` and then `import plawt` in your python file.    
+`pip install plawt` and then `import plawt` in your python file.
 Current version is [here](https://pypi.python.org/pypi/plawt/).
-See examples folder for how to use `plawt` to make subplots and step plots.
+
+Features
+========
+See  the examples folder for how to use `plawt` to make subplots, step plots, and other less common uses.
+
+In addition to any usual single panel plot `plawt` also wraps these matplotlib features:
+	* Arbitrary subplot grids, spacing between subplots
+	* Step Plots
+	* Log plots
+	* legends, legend locations, legend labels
+	* labelling, subplot titles (with location), super titles, font-size tweaking
+	* x limits, y limits,
+	* marker and linestyle, alpha, drawstyle
+	* saving figures, showing figures to screen
 
 Example
 =======
-Here's a plot that shows why the strength of Balmer lines varies in different colored stars:
+Here's a simple logarithmic plot that shows why the strength of Balmer lines varies in different colored stars:
 ![plot](excitation_logarithmic.png)
 
 Here's the code for that plot using `plawt`:
