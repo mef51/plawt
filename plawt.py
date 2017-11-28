@@ -19,6 +19,7 @@ def plot(*plotStructs):
 	hspace = globalParams['hspace'] if 'hspace' in globalParams else 0.2
 	wspace = globalParams['wspace'] if 'wspace' in globalParams else 0.2
 	title  = globalParams['title']  if 'title'  in globalParams else ''
+	titlesize = globalParams['titlesize'] if 'titlesize' in globalParams else mpl.rcParams['figure.titlesize']
 
 	nrows = globalParams['nrows'] if 'nrows' in globalParams else 1
 	ncols = globalParams['ncols'] if 'ncols' in globalParams else 1
@@ -30,7 +31,7 @@ def plot(*plotStructs):
 	axes = axesarray.flatten()
 	fig.set_size_inches(globalParams['figsize']) if 'figsize' in globalParams else None
 	fig.subplots_adjust(hspace=hspace, wspace=wspace)
-	fig.suptitle(title)
+	fig.suptitle(title, fontsize=titlesize)
 
 	# hack for common x and y labels on subplots
 	if sharex or sharey:
@@ -41,6 +42,8 @@ def plot(*plotStructs):
 		ylabel = globalParams['ylabel']  if 'ylabel' in globalParams else ''
 		plt.xlabel(xlabel) if sharex else None
 		plt.ylabel(ylabel) if sharey else None
+		plt.gca().xaxis.label.set_size(globalParams['xlabelsize']) if 'xlabelsize' in globalParams else None
+		plt.gca().yaxis.label.set_size(globalParams['ylabelsize']) if 'ylabelsize' in globalParams else None
 
 	if not isinstance(axes, ndarray):
 		axes = (axes,) # this makes axes iterable even if there's just one axes
@@ -90,6 +93,9 @@ def plot(*plotStructs):
 				ax.set_aspect(val) if key == 'aspect' else None
 				ax.legend(**val)   if key == 'legend' else None
 				ax.minorticks_on() if key == 'minorticks' and val else None
+
+				ax.xaxis.label.set_size(globalParams['xlabelsize']) if 'xlabelsize' in plotStruct else None
+				ax.yaxis.label.set_size(globalParams['ylabelsize']) if 'xlabelsize' in plotStruct else None
 
 				if key == 'tick_params':
 					val = plotStruct['tick_params']
