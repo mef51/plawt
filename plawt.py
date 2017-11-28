@@ -96,6 +96,8 @@ def plot(*plotStructs):
 					fontdict = plotStruct['subtitledict'] if 'subtitledict' in plotStruct else None
 					ax.set_title(val, fontdict=fontdict, fontsize=fontsize, loc=loc)
 
+	plt.tight_layout(**globalParams['tight_layout']) if 'tight_layout' in globalParams else None
+
 	# Storing and cleanup of plot
 	fig.savefig(globalParams['filename']) if 'filename' in globalParams else None
 	plt.show() if 'show' in globalParams and globalParams['show'] else None
