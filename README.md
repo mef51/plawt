@@ -22,6 +22,9 @@ In addition to any usual single panel plot `plawt` also wraps these matplotlib f
 * x limits, y limits,
 * marker and linestyle, alpha, drawstyle
 * saving figures, showing figures to screen
+* tight_layout
+* matplotlib style (`plt.style.use()`)
+* Tick parameters (`axes.tick_params`)
 
 Example
 =======

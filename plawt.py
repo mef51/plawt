@@ -7,6 +7,7 @@ def plot(*plotStructs):
 		raise TypeError("Missing 1 required argument")
 
 	globalParams = plotStructs[0] # set all global properties using the first plotStruct
+	plt.style.use(globalParams['style']) if 'style' in globalParams else None
 
 	# setup subplots
 	sharex = globalParams['sharex'] if 'sharex' in globalParams else False
@@ -89,6 +90,14 @@ def plot(*plotStructs):
 				ax.set_aspect(val) if key == 'aspect' else None
 				ax.legend(**val)   if key == 'legend' else None
 				ax.minorticks_on() if key == 'minorticks' and val else None
+
+				if key == 'tick_params':
+					val = plotStruct['tick_params']
+					if type(val) is list:
+						for operation in val:
+							ax.tick_params(**operation)
+					else:
+						ax.tick_params(**val)
 
 				if key == 'subtitle':
 					fontsize = plotStruct['fontsize'] if 'fontsize' in plotStruct else mpl.rcParams['axes.titlesize']
