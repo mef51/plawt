@@ -28,7 +28,7 @@ def plot(*plotStructs):
 		nrows = len(plotStructs)
 
 	fig, axesarray = plt.subplots(nrows=nrows, ncols=ncols, sharex=sharex, sharey=sharey, gridspec_kw=gridspec_kw)
-	axes = axesarray.flatten() if type(axesarray) is 'ndarray' else axesarray
+	axes = axesarray.flatten() if type(axesarray) is ndarray else axesarray
 	fig.set_size_inches(globalParams['figsize']) if 'figsize' in globalParams else None
 	fig.subplots_adjust(hspace=hspace, wspace=wspace)
 	fig.suptitle(title, fontsize=titlesize)
