@@ -18,6 +18,10 @@ def plot(*plotStructs):
 	# https://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.subplots_adjust
 	hspace = globalParams['hspace'] if 'hspace' in globalParams else 0.2
 	wspace = globalParams['wspace'] if 'wspace' in globalParams else 0.2
+	top = globalParams['top'] if 'top' in globalParams else 0.9
+	bottom = globalParams['bottom'] if 'bottom' in globalParams else 0.1
+	left = globalParams['left'] if 'left' in globalParams else 0.125
+	right = globalParams['right'] if 'right' in globalParams else 0.9
 	title  = globalParams['title']  if 'title'  in globalParams else ''
 	titlesize = globalParams['titlesize'] if 'titlesize' in globalParams else mpl.rcParams['figure.titlesize']
 
@@ -30,7 +34,7 @@ def plot(*plotStructs):
 	fig, axesarray = plt.subplots(nrows=nrows, ncols=ncols, sharex=sharex, sharey=sharey, gridspec_kw=gridspec_kw)
 	axes = axesarray.flatten() if type(axesarray) is ndarray else axesarray
 	fig.set_size_inches(globalParams['figsize']) if 'figsize' in globalParams else None
-	fig.subplots_adjust(hspace=hspace, wspace=wspace)
+	fig.subplots_adjust(hspace=hspace, wspace=wspace, top=top, bottom=bottom, right=right, left=left)
 	fig.suptitle(title, fontsize=titlesize)
 
 	# hack for common x and y labels on subplots
@@ -112,6 +116,7 @@ def plot(*plotStructs):
 					ax.set_title(val, fontdict=fontdict, fontsize=fontsize, loc=loc)
 
 	plt.tight_layout(**globalParams['tight_layout']) if 'tight_layout' in globalParams else None
+	fig.subplots_adjust(hspace=hspace, wspace=wspace, top=top, bottom=bottom, right=right, left=left)
 
 	# Storing and cleanup of plot
 	fig.savefig(globalParams['filename']) if 'filename' in globalParams else None
