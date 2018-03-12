@@ -115,6 +115,13 @@ def plot(*plotStructs):
 					fontdict = plotStruct['subtitledict'] if 'subtitledict' in plotStruct else None
 					ax.set_title(val, fontdict=fontdict, fontsize=fontsize, loc=loc)
 
+				if key == 'text':
+					if not isinstance(val, list):
+						val = [val,]
+					for v in val:
+						textx, texty, s = v.pop('x'), v.pop('y'), v.pop('s')
+						ax.text(textx, texty, s, **v)
+
 	plt.tight_layout(**globalParams['tight_layout']) if 'tight_layout' in globalParams else None
 	fig.subplots_adjust(hspace=hspace, wspace=wspace, top=top, bottom=bottom, right=right, left=left)
 

@@ -1,6 +1,6 @@
 plawt - JSON-like sugar for matplotlib
 ============
-Because sometimes you just want a good looking plot goddamnit.
+Because sometimes you just want a good looking plot damnit.
 I don't like context switching from physics to python, and hopefully this will let me do less of it.
 
 Installation
@@ -25,6 +25,7 @@ In addition to any usual single panel plot `plawt` also wraps these matplotlib f
 * tight_layout
 * matplotlib style (`plt.style.use()`)
 * Tick parameters (`axes.tick_params`)
+* Text annotations
 
 Example
 =======
@@ -185,8 +186,6 @@ plt.show
 ## Or even just
 plawt.plot(plotDictionary).show()
 ```
-
-And that's the waaaaay it goes
 
 ---
 Copyright © 2017 Mohammed Chamma
